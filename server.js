@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const octokit = require('@octokit/rest');
 const randomString = require('randomstring');
-
+const dashboardRouter = require('./app/routes/dashboardRouter');
 const indexRouter = require('./app/routes/indexRoutes');
 const authRouter = require('./app/routes/authRoutes');
 const key = require('./app/config/keys');
