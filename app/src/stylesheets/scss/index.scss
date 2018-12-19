@@ -1,0 +1,128 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@mixin transition($duration) {
+  -webkit-transition: $duration all ease;
+  -moz-transition: $duration all ease;
+  -ms-transition: $duration all ease;
+  -o-transition: $duration all ease;
+  transition: $duration all ease;
+}
+
+$primaryColor: #395555;
+$refHeight: 9rem;
+$enable-gradients: true;
+
+* {
+  font-family: Montserrat;
+}
+
+nav {
+  background-color: $primaryColor;
+  color: white !important;
+  box-shadow: 0 0 4px 0 black;
+
+  li {
+    background-color: rgb(25, 147, 151);
+    @include transition(1s);
+  }
+  li:hover {
+    background-color: rgb(31, 197, 147);
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    text-shadow: 0 0 10px #9ecaed;
+  }
+    
+} 
+
+.jumbotron {
+  background-image: url('./gawds_back.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 10px black;
+  margin-top: 8.5vh;
+  padding: 0 !important;
+  min-height: 72vh;
+  box-sizing: border-box !important;
+  .wrapper {
+    background-color: #030a1f8e;
+    position: relative;
+    min-height: 100%;
+  }
+}
+
+.buttonContainer {
+  height: 20vh;
+  background: linear-gradient(#007b5e, #395555);
+  a {
+    background-color: #0d297538 !important;
+    @include transition(1s);
+  }
+  a:hover {
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    text-shadow: 0 0 10px #9ecaed;
+  }
+}
+
+.card {
+  background: linear-gradient(rgb(255, 8, 0), rgb(163, 20, 220));
+  margin: 2vh 8vh;
+  color: white;
+  -webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+  transition: .5s all ease;
+  .rounded-circle {
+    background-color: white;
+    width: 35vh;
+    height: 35vh;
+    i {
+      color:black;
+    }
+  }
+}
+.card:hover {
+  transform: scale(1.3, 1.3);
+  z-index: 2;
+  -webkit-box-shadow: 0 10px 6px -6px #757272;
+	-moz-box-shadow: 0 10px 6px -6px #757272;
+  box-shadow: 20px 20px 6px -6px #757272;
+}
+
+section {
+    padding: 60px 0;
+}
+
+#footer {
+  box-shadow: 4px 0 0 0 black;
+  background: #007b5e !important;
+}
+#footer a {
+    color: #c1a8eb;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+  margin-right: 5px;
+  font-size: 25px;
+  @include transition(0.5s);
+}
+#footer ul.social li:hover a i {
+	font-size: 30px;
+	margin-top: -10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+
