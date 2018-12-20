@@ -6,4 +6,4 @@ module.exports.keys = {
   redirectUri: '',
   port: 3000,
   userAgent: ''
-}
+};

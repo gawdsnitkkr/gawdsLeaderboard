@@ -1,14 +1,15 @@
-const Router = require('express').Router();
+const router = require('express').Router();
 const key = require('../config/keys');
-const User = require('../models/userModel');
+const user = require('../models/userModel');
+const octokit = require('@octokit/rest')();
 
-Router.get('/', (req, res) => {
+router.get('/', (req, res) => {
 
   //Requests to server
   octokit.request('GET /user/repos', {
     headers: {
       'user-agent': key.keys.userAgent,
-      authorization: 'token ' + key.keys.accessToken,
+      'authorization': 'token ' + key.keys.accessToken,
     },
   }).then((body) => {
 
@@ -21,4 +22,4 @@ Router.get('/', (req, res) => {
   });
 });
 
-module.exports = Router;
+module.exports = router;
