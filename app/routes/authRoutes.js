@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const octokit = require('@octokit/rest');
+const octokit = require('../util/octokit');
 const request = require('request');
 const randomString = require('randomstring');
 const key = require('../config/keys');
@@ -27,7 +27,6 @@ router.all('/redirect', (req, res) => {
   const returnedState = req.query.state;
 
   if (returnedState == csrfString) {
-
     request.post({
       url: 'https://github.com/login/oauth/access_token?' +
         qs.stringify({
@@ -39,7 +38,11 @@ router.all('/redirect', (req, res) => {
         })
     }, (error, response, body) => {
       key.keys.accessToken = qs.parse(body).access_token;
-      res.redirect('/user');
+      octokit.authenticate({
+        type: 'oauth',
+        token: key.keys.accessToken
+      });
+      res.redirect('/dashboard');
     });
   } else {
     res.redirect('/');
