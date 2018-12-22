@@ -1,0 +1,127 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+* {
+  font-family: Montserrat;
+}
+
+.cont {
+  background-color: #e1ecf8 !important;
+}
+
+nav {
+  z-index: 1 !important;
+  background-color: #e1ecf8;
+  color: black;
+}
+
+nav .container {
+  padding: 1vh 8vh;
+}
+
+nav .active {
+  border-bottom: 3px solid black;
+}
+
+nav li {
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+nav li:hover {
+  text-shadow: 0 0 10px #9ecaed;
+}
+
+.jumbotron {
+  margin-top: 11vh;
+  margin-bottom: 0 !important;
+  color: white;
+  background-color: #e1ecf8 !important;
+  min-height: 89vh;
+}
+
+.jumbotron h1 {
+  font-size: 10vh;
+}
+
+.jumbotron .master {
+  position: relative;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  min-height: 50vh !important;
+  background-color: rgba(36, 38, 61, 0.74);
+}
+
+.jumbotron .master .rounded-circle {
+  background-color: white;
+  width: 35vh;
+  height: 35vh;
+}
+
+.jumbotron .master .rounded-circle i {
+  color: #e14e6e;
+}
+
+.jumbotron .master .current {
+  max-height: 10vh;
+}
+
+.jumbotron .master .container-fluid {
+  margin-top: 6vh;
+  color: #f79e36;
+}
+
+.graphDisplay {
+  height: 80vh;
+}
+
+.graphDisplay .container {
+  height: 60vh;
+  background-color: rgba(36, 38, 61, 0.596);
+}
+
+.graphDisplay .graph {
+  background-color: orangered;
+}
+
+section {
+  padding: 60px 0;
+}
+
+#footer {
+  -webkit-box-shadow: 4px 0 0 0 black;
+          box-shadow: 4px 0 0 0 black;
+  background: #007b5e !important;
+}
+
+#footer a {
+  color: #c1a8eb;
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+#footer ul.social li {
+  padding: 3px 0;
+}
+
+#footer ul.social li a i {
+  margin-right: 5px;
+  font-size: 25px;
+  -webkit-transition: .5s all ease;
+  transition: .5s all ease;
+}
+
+#footer ul.social li:hover a i {
+  font-size: 30px;
+  margin-top: -10px;
+}
+
+#footer ul.social li a,
+#footer ul.quick-links li a {
+  color: #ffffff;
+}
+
+#footer ul.social li a:hover {
+  color: #eeeeee;
+}
+/*# sourceMappingURL=dashboard1.css.map */
