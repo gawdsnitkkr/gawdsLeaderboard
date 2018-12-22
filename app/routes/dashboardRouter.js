@@ -15,8 +15,13 @@ router.get('/:username', (req, res) => {
   var name = req.params.username;
   //console.log(name)
   user.find({"login":name}).exec(function(err,user){
-    console.log(user[0].year);
-    res.render('dashboard.ejs', {Name: user[0].login, Bio: user[0].bio, Year: user[0].year})
+    var spawn = require("child_process").spawn;
+    var process = spawn('python',["./user.py", 
+                            req.params.username]); 
+    process.stdout.on('data', function(data) { 
+        console.log(data.toString()); 
+    });
+    res.render('dashboard.ejs', {Name: user[0].login, Bio: user[0].bio, Year: user[0].year, Link : user[0].avatar_url })
   })
   
 

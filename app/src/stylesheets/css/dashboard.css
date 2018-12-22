@@ -1,58 +1,91 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 * {
   font-family: Montserrat;
 }
 
 .cont {
-  background-color: #e1ecf8 !important;
+  background-color: #e5edf8 !important;
 }
 
-nav {
+nav, .navbar-brand {
+  color: #828484 !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.topnav {
+  font-weight: 600;
+  height: 11vh;
   z-index: 1 !important;
-  background-color: #e1ecf8;
-  color: black;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #e5edf8;
 }
 
-nav .container {
+.topnav .container {
   padding: 1vh 8vh;
 }
 
-nav .active {
-  border-bottom: 3px solid black;
+.topnav .active {
+  border-bottom: 3px solid #828484;
 }
 
-nav li {
+.topnav li {
+  font-family: 'Noto Sans', sans-serif;
+  color: #767779 !important;
   -webkit-transition: 1s all ease;
   transition: 1s all ease;
 }
 
-nav li:hover {
+.topnav li:hover {
   text-shadow: 0 0 10px #9ecaed;
 }
 
 .jumbotron {
   margin-top: 11vh;
+  padding: 3vh 5vh 6vh 5vh !important;
   margin-bottom: 0 !important;
   color: white;
-  background-color: #e1ecf8 !important;
+  background-color: #e5edf8 !important;
   min-height: 89vh;
 }
 
+.jumbotron .name {
+  margin-top: 5vh;
+}
+
 .jumbotron h1 {
-  font-size: 10vh;
+  font-family: 'Raleway';
+  color: #555555 !important;
+  letter-spacing: 8px !important;
+  font-weight: bolder;
 }
 
 .jumbotron .master {
   position: relative;
+  width: 90%;
   padding-top: 2vh;
+  color: #767779;
   padding-bottom: 2vh;
-  min-height: 50vh !important;
-  background-color: rgba(36, 38, 61, 0.74);
+  min-height: 77vh !important;
+}
+
+.jumbotron .master .username {
+  background-color: #dbe6f5;
+  font-weight: bold;
+  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  margin: 0 !important;
+  padding-bottom: 3vh;
 }
 
 .jumbotron .master .rounded-circle {
-  background-color: white;
+  background-color: #fccf0c;
   width: 35vh;
   height: 35vh;
 }
@@ -66,21 +99,52 @@ nav li:hover {
 }
 
 .jumbotron .master .container-fluid {
-  margin-top: 6vh;
-  color: #f79e36;
+  margin-top: 3vh;
+  }
+
+.org {
+  background-color: #d2e0f3;
+  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
+          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
+  padding-bottom: 2vh;
+  padding-top: 1vh;
+}
+
+.org h3 {
+  font-weight: bolder !important;
 }
 
 .graphDisplay {
-  height: 80vh;
+  height: 85vh;
+  background-color: #e5edf8;
+  font-weight: bold;
+  color: #555555 !important;
+}
+
+.graphDisplay .active {
+  background-color: #aecbf3 !important;
+  border-color: #aecbf3 !important;
 }
 
 .graphDisplay .container {
-  height: 60vh;
-  background-color: rgba(36, 38, 61, 0.596);
+  height: 75vh;
+  padding: 10vh 12vh 6vh 12vh;
+  background-color: #dbe6f5;
+  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
 }
 
-.graphDisplay .graph {
-  background-color: orangered;
+.graphDisplay .container .tab-content {
+  background-color: #d2e0f3;
+  color: white;
+}
+
+.footer {
+  background-color: #e5edf8;
+}
+
+.footer i {
+  color: rgba(0, 0, 0, 0.904);
 }
 
 section {
@@ -124,4 +188,7 @@ section {
 #footer ul.social li a:hover {
   color: #eeeeee;
 }
-/*# sourceMappingURL=dashboard1.css.map */
+.socialic{
+  padding-bottom: 20px;
+}
+/*# sourceMappingURL=dashboard.css.map */
