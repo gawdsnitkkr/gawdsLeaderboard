@@ -17,7 +17,7 @@ router.get('/:username', (req, res) => {
 
   user.find({"login":name}).exec(function(err,user){
     var spawn = require("child_process").spawn;
-    var process = spawn('python',["./user.py", 
+    var process = spawn('python',["./graphGen.py", 
                             req.params.username]); 
     process.stdout.on('data', function(data) { 
         console.log(data.toString()); 
