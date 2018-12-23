@@ -58,7 +58,7 @@
     <div class="container-fluid master">
       <div class="row username">
         <div class="col-md-4 d-flex justify-content-center align-items-center">
-        <img src="<%=Link %>" style="border-radius: 50%;"  width="280" height="280">
+        <img src=         "<%=Link %>" style="border-radius: 60%;"  width="240" height="240">
         </div>
         <div class="col-md-8 name">
           <h1>            <%= Name%>
@@ -105,10 +105,10 @@
       </nav>
       <div class="tab-content h-75 py-2 d-flex justify-content-center align-items-center" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <% include ./partials/plot %>
+        <% include ./partials/plotweek %>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          All this is included in the my year element.
+        <% include ./partials/plotmonth %>
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           All this is included in the all activity element.

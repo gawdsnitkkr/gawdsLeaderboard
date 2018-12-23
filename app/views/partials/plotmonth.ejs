@@ -1,0 +1,43 @@
+
+
+<style>
+
+</style>
+
+<div id="fig_el690023999235794803325032909"></div>
+<script>
+function mpld3_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(mpld3) !== "undefined" && mpld3._mpld3IsLoaded){
+   // already loaded: just create the figure
+   !function(mpld3){
+       
+       mpld3.draw_figure("fig_el690023999235794803325032909", {"width": 300.0, "height": 200.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [-0.45, 9.45], "ylim": [-3.1500000000000004, 66.15], "xdomain": [-0.45, 9.45], "ydomain": [-3.1500000000000004, 66.15], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 0, "tickvalues": [], "tickformat": [], "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": true}, {"position": "left", "nticks": 0, "tickvalues": [], "tickformat": [], "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": true}], "axesbg": "#D2E0F3", "axesbgalpha": null, "zoomable": true, "id": "el69002399968296912", "lines": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el69002399968499472", "color": "#9966FF", "linewidth": 5.0, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}], "paths": [], "markers": [], "texts": [{"text": "weeks", "position": [0.5, -0.03607503607503604], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el69002399968352688"}, {"text": "commits", "position": [-0.023894862604540018, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el69002399968353640"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[0.0, 0.0], [1.0, 0.0], [2.0, 0.0], [3.0, 0.0], [4.0, 5.0], [5.0, 0.0], [6.0, 27.0], [7.0, 35.0], [8.0, 17.0], [9.0, 63.0]]}, "id": "el69002399923579480", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
+   }(mpld3);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/mpld3
+   require.config({paths: {d3: "https://mpld3.github.io/js/d3.v3.min"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.3.js", function(){
+         
+         mpld3.draw_figure("fig_el690023999235794803325032909", {"width": 300.0, "height": 200.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [-0.45, 9.45], "ylim": [-3.1500000000000004, 66.15], "xdomain": [-0.45, 9.45], "ydomain": [-3.1500000000000004, 66.15], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 0, "tickvalues": [], "tickformat": [], "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": true}, {"position": "left", "nticks": 0, "tickvalues": [], "tickformat": [], "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": true}], "axesbg": "#D2E0F3", "axesbgalpha": null, "zoomable": true, "id": "el69002399968296912", "lines": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el69002399968499472", "color": "#9966FF", "linewidth": 5.0, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}], "paths": [], "markers": [], "texts": [{"text": "weeks", "position": [0.5, -0.03607503607503604], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el69002399968352688"}, {"text": "commits", "position": [-0.023894862604540018, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el69002399968353640"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[0.0, 0.0], [1.0, 0.0], [2.0, 0.0], [3.0, 0.0], [4.0, 5.0], [5.0, 0.0], [6.0, 27.0], [7.0, 35.0], [8.0, 17.0], [9.0, 63.0]]}, "id": "el69002399923579480", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & mpld3
+    mpld3_load_lib("https://mpld3.github.io/js/d3.v3.min.js", function(){
+         mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.3.js", function(){
+                 
+                 mpld3.draw_figure("fig_el690023999235794803325032909", {"width": 300.0, "height": 200.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [-0.45, 9.45], "ylim": [-3.1500000000000004, 66.15], "xdomain": [-0.45, 9.45], "ydomain": [-3.1500000000000004, 66.15], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 0, "tickvalues": [], "tickformat": [], "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": true}, {"position": "left", "nticks": 0, "tickvalues": [], "tickformat": [], "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": true}], "axesbg": "#D2E0F3", "axesbgalpha": null, "zoomable": true, "id": "el69002399968296912", "lines": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el69002399968499472", "color": "#9966FF", "linewidth": 5.0, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}], "paths": [], "markers": [], "texts": [{"text": "weeks", "position": [0.5, -0.03607503607503604], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el69002399968352688"}, {"text": "commits", "position": [-0.023894862604540018, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el69002399968353640"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[0.0, 0.0], [1.0, 0.0], [2.0, 0.0], [3.0, 0.0], [4.0, 5.0], [5.0, 0.0], [6.0, 27.0], [7.0, 35.0], [8.0, 17.0], [9.0, 63.0]]}, "id": "el69002399923579480", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
+            })
+         });
+}
+</script>
