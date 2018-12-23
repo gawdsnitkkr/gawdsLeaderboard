@@ -7,6 +7,8 @@ const path = require('path');
 const dashboardRouter = require('./app/routes/dashboardRouter');
 const indexRouter = require('./app/routes/indexRoutes');
 const authRouter = require('./app/routes/authRoutes');
+const errorRouter = require('./app/routes/errorRoutes');
+
 const key = require('./app/config/keys');
 
 const app = express();
@@ -33,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'app', 'src')));
 app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
 app.get('/', indexRouter);
-
+app.get("/error",errorRouter)
 
   
 

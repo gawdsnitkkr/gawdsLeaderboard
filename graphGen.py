@@ -5,7 +5,7 @@ import mpld3
 
 def plt_html_line(data,username,NoHtml=False):
     fig = plt.figure()
-    print(len(data))
+    #print(len(data))
     plt.plot(data,color='#9966ff')
     plt.rcParams['axes.facecolor'] = "#d2e0f3"
     plt.rcParams['lines.linewidth'] = 5
