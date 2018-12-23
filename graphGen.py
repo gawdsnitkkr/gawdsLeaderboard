@@ -19,7 +19,7 @@ def plt_html_line(data,username,NoHtml=False):
 
     mpld3.save_html(fig,"./app/views/partials/plotweek.ejs")
 
-    plt.show()
+    #plt.show()
 
 
 def person_plot_week(username,NoHtml = False,size=[3,2],month=False):
