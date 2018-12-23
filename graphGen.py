@@ -71,6 +71,7 @@ username = sys.argv[1]
 # person_plot_month(username, NoHtml=True)
 # person_plot_month(username, NoHtml=False)
 person_plot_week(username, NoHtml=True)
+print("Plot Created1!!")
 person_plot_week(username,NoHtml=False)
-print("Plot Created!!")
+print("Plot Created2!!")
 
