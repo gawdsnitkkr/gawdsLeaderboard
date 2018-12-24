@@ -10,23 +10,43 @@ mongoose.connection
         console.log("COuld not connect as ",err)
     });
 
-
-router.get('/:username', (req, res) => {
-  var name = req.params.username;
-
-  user.findOne({"login":name}).then(user=>{
+async function graphGen(username,res){
+  user.findOne({"login":username}).then(async user=>{
     if(!user){
-      res.redirect('/error')
+      res.redirect('/error');
     }
     else{
-        var process = spawn('python',["./graphGen.py", 
-                            req.params.username]); 
-    process.stdout.on('data', function(data) { 
-        console.log(data.toString()); 
-    });
-    res.render('dashboard.ejs', {Name: user.login, Bio: user.bio, Year: user.year, Link : user.avatar_url })
-  }})
+      const  process = await spawn('python',["./graphGen.py", username]);
+      process.stdout.on('data', function(data) { 
+      console.log(data.toString())}); 
+      res.render('dashboard.ejs', {Name: user.login, Bio: user.bio, Year: user.year, Link : user.avatar_url });
+      console.log("rendered page")
+      }
     })
+  }
+ 
+router.get('/:username', (req, res) => {
+  var name = req.params.username;
+  graphGen(name,res);
+  
+  // user.findOne({"login":name}).then(user=>{
+  //       if(!user){
+  //         res.redirect('/error');
+  //       }
+  //       else{
+  //         const  process =spawn('python',["./graphGen.py", name]); 
+  //         process.stdout.on('data', function(data) { 
+  //         console.log(data.toString())}); 
+  //       res.render('dashboard.ejs', {Name: user.login, Bio: user.bio, Year: user.year, Link : user.avatar_url })
+  //         }
+  //       })
+ 
+
+  // var process = spawn('python',["./deleteplots.py"]); 
+  // process.stdout.on('data', function(data) { 
+  // console.log(data.toString()); 
+    //})
+  });
 
 
 

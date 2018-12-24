@@ -2,6 +2,7 @@ import seaborn as sns
 from pymongo import MongoClient
 from PIL import Image
 import sys
+import os
 
 def heatplot(username1, username2):
     client = MongoClient('localhost', 27017)
@@ -17,10 +18,11 @@ def heatplot(username1, username2):
     data = [username1,username2]
 
     ax = sns.heatmap(data)
-    ax.get_figure().savefig("output.png")
-    i = Image.open("output.png")
+    ax.get_figure().savefig("./app/views/partials/temp.png")
+    i = Image.open("./app/views/partials/temp.png")
     w,h = i.size
-    i.crop((80, 58, w-163, h-53)).save("2.png")
+    i.crop((80, 58, w-163, h-53)).save("./app/views/partials/output.png")
+    os.remove("./app/views/partials/temp.png")
     print("Render Complete!!")
     print(data)
 

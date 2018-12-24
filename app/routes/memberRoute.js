@@ -5,27 +5,52 @@ let firstYear=[], secondYear=[], thirdYear=[], fourthYear=[];
 
 const router = express.Router();
 
-User.find({ }, function(err,memberData) {
-  if(err) 
-    console.log(err);
-  else if(memberData.year == 1)
-    firstYear.push(memberData);
-  else if(memberData.year == 2)
-    secondYear.push(memberData);
-  else if(memberData.year == 3)
-    thirdYear.push(memberData);
-  else if(memberData.year == 4)
-    fourthYear.push(memberData);
-});
+User.find({"year":"FirstYear"}).then(users=> {
+  if(!users) 
+  res.redirect('/error');
+  else{
+      for(var i=0;i<users.length;i++){
+        firstYear.push(users[i])
+      }
+      console.log(firstYear.login)
+}});
 
+User.find({"year":"SecondYear"}).then(users=> {
+  if(!users) 
+  res.redirect('/error');
+  else{
+      for(var i=0;i<users.length;i++){
+        secondYear.push(users[i])
+      }
+}});
+User.find({"year":"ThirdYear"}).then(users=> {
+  if(!users) 
+  res.redirect('/error');
+  else{
+      for(var i=0;i<users.length;i++){
+        thirdYear.push(users[i])
+      }
+}});
+User.find({"year":"FourthYear"}).then(users=> {
+  if(!users) 
+  res.redirect('/error');
+  else{
+      for(var i=0;i<users.length;i++){
+        fourthYear.push(users[i])
+      }
+}});
 router.get('/', (req, res) => {
+  for(var i=0;i<firstYear.length;i++){
+    console.log(firstYear[i].login);
+  }
   res.render('members.ejs', {
     yearOne: firstYear,
     yearTwo: secondYear,
     yearThree: thirdYear,
     yearFour: fourthYear,
     counter: [1,1,1,1]
-  });
+  })
+
 });
 
 module.exports = router;

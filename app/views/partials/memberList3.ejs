@@ -7,19 +7,19 @@
     </tr>
   </thead>
   <tbody>
-    <% yearThree.forEach((member) => { %>
-    <tr class="row-click" data-href="/dashboard/<%= member.login %>">
+    <% yearThree.forEach((users) => { %>
+    <tr class="row-click" data-href="/dashboard/<%= users.login %>">
       <td class="text-center">
         <%= counter[2] %>
       </td>
       <td>
-        <%= member.login %>
+        <%= users.login %>
       </td>
       <td class="toShow">Followers:
-        <%= members.followers %>
+        <%= users.followers %>
       </td>
       <td class="toShow">Following:
-        <%= members.following %>
+        <%= users.following %>
       </td>
     </tr>
     <% counter[2]++ %>
