@@ -1,0 +1,28 @@
+<table class="table table-hover">
+  <thead class="w-100">
+    <tr>
+      <th class="text-center">SrNo</th>
+      <th>Name</th>
+      <th class="toShow" colspan="2">Other Stats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% yearFour.forEach((member) => { %>
+    <tr class="row-click" data-href="/dashboard/<%= member.login %>">
+      <td class="text-center">
+        <%= counter[3] %>
+      </td>
+      <td>
+        <%= member.login %>
+      </td>
+      <td class="toShow">Followers:
+        <%= members.followers %>
+      </td>
+      <td class="toShow">Following:
+        <%= members.following %>
+      </td>
+    </tr>
+    <% counter[3]++ %>
+    <% }) %>
+  </tbody>
+</table>

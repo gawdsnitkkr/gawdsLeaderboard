@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/css/members.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <title>gawds LeaderBoard-Members</title>
+</head>
+
+<body>
+  <nav class="navbar topnav navbar-expand-sm fixed-top navbar-light px-lg-5">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.gawds.in">gawds</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarTogglerDemo02"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto mr-3 mt-2 mt-lg-0">
+          <li class="nav-item mr-3 active">
+            <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="#">STATS</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="#">ABOUT US</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <div class="container-fluid master">
+      <div class="username container d-flex align-items-center justify-content-center">
+        <h1 class="text-center text-truncate">MEET OUR MEMBERS</h1>
+      </div>
+
+      <div class="container-fluid yearData">
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header cd4 collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="false" aria-controls="fourthYear">
+              <h5 class="mb-0 spHead">
+                4 <sup>th</sup> Year
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="fourthYear" data-parent="#accordion">
+              <div class="card-body">
+                <% include ./partials/memberList4.ejs %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header cd3 collapsed" id="headingThree" data-toggle="collapse" data-target="#thirdYear"
+              aria-expanded="false" aria-controls="thirdYear">
+              <h5 class="mb-0 spHead">
+                3 <sup>rd</sup> Year
+              </h5>
+            </div>
+            <div id="thirdYear" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <% include ./partials/memberList3.ejs %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header cd2 collapsed" id="headingThree" data-toggle="collapse" data-target="#secondYear"
+              aria-expanded="false" aria-controls="secondYear">
+              <h5 class="mb-0 spHead">
+                2 <sup>nd</sup> Year
+              </h5>
+            </div>
+            <div id="secondYear" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <% include ./partials/memberList2.ejs %>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header cd1 collapsed" id="headingFour" data-toggle="collapse" data-target="#firstYear"
+              aria-expanded="false" aria-controls="firstYear">
+              <h5 class="mb-0 spHead">
+                1 <sup>st</sup> Year
+              </h5>
+            </div>
+            <div id="firstYear" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="card-body">
+                <% include ./partials/memberList1.ejs %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container d-flex justify-content-center align-items-center graph">
+    <div class="toGraph"></div>
+    <div id="fig_el279624167887064721144265325"></div>
+  </div>
+
+  <nav class="navbar navbar-expand footer navbar-light bg-faded">
+    <div class="container">
+      <span>&copy All rights Reversed.<a class="navbar-brand" href="https://www.gawds.in">GAWDS.IN</a></span>
+      <ul class="navbar-nav ml-auto mr-3 mt-2 mt-lg-0">
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="#"><i class="fa fa-instagram fa-2x"></i></a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="#"><i class="fa fa-envelope fa-2x"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="/js/members.js"></script>
+</body>
+
+</html>

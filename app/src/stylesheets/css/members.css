@@ -1,0 +1,217 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+* {
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+body {
+  background-color: #e1ecf8 !important;
+}
+
+.cont {
+  background-color: #e1ecf8 !important;
+}
+
+nav, .navbar-brand {
+  color: #828484 !important;
+}
+
+.topnav {
+  will-change: transform;
+  z-index: 1 !important;
+  background-color: #e1ecf8;
+  position: fixed !important;
+  height: 11vh;
+  -webkit-animation: SlideTop 2s forwards;
+          animation: SlideTop 2s forwards;
+}
+
+.topnav .container {
+  padding: 1vh 8vh;
+}
+
+.topnav .active {
+  border-bottom: 3px solid #828484;
+}
+
+.topnav li {
+  font-family: 'Noto Sans', sans-serif;
+  color: #828484 !important;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.topnav li:hover {
+  text-shadow: 0 0 10px #9ecaed;
+}
+
+.jumbotron {
+  margin-top: 11vh;
+  padding: 3vh 2vw 6vh 2vw !important;
+  margin-bottom: 0 !important;
+  color: white;
+  background-color: #e1ecf8 !important;
+  min-height: 89vh;
+}
+
+.jumbotron .name {
+  margin-top: 5vh;
+}
+
+.jumbotron h1 {
+  font-family: 'Noto Sans';
+  color: #555555 !important;
+  font-size: 9vh !important;
+  font-weight: bold !important;
+}
+
+.jumbotron .master {
+  position: relative;
+  width: 80%;
+  padding-top: 2vh;
+  color: #767779;
+  padding-bottom: 2vh;
+}
+
+.jumbotron .master .username {
+  background-color: #d3e0f3;
+  font-weight: bold;
+  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  margin: 0 !important;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.jumbotron .master .current {
+  max-height: 10vh;
+  margin: 2vh 0;
+}
+
+.jumbotron .master .container-fluid {
+  margin-top: 3vh;
+}
+
+.yearData {
+  background-color: #dae6f4;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
+          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
+  padding-bottom: 3vh;
+  padding-top: 3vh;
+}
+
+.yearData h5 {
+  font-weight: bolder !important;
+  margin-left: 2rem;
+  display: inline-block;
+}
+
+.yearData .card {
+  background-color: #dae6f4;
+  border-style: none;
+}
+
+.yearData .card-header {
+  -webkit-box-shadow: 0 0px 5px rgba(78, 73, 73, 0.281), 0 2px 5px rgba(78, 73, 73, 0.281);
+          box-shadow: 0 0px 5px rgba(78, 73, 73, 0.281), 0 2px 5px rgba(78, 73, 73, 0.281);
+  margin: 0 0 1vh 0;
+  background-color: #d3e0f3;
+}
+
+.yearData .card-header .fa {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.yearData .card-body {
+  padding: 0;
+}
+
+.yearData thead {
+  background-color: #cad8ed !important;
+}
+
+.yearData tbody {
+  background-color: #e0e9f3;
+}
+
+.yearData .toShow {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .yearData .toShow {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .yearData .toShow {
+    display: initial;
+  }
+}
+
+.spHead:after {
+  font-family: 'FontAwesome';
+  margin-right: 6rem;
+  font-size: 4vh;
+  content: "\f13a";
+  float: left;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  color: inherit;
+}
+
+.card-header.collapsed .spHead:after {
+  content: "\f13a";
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.graph {
+  margin-bottom: 10vh;
+  height: 50vh;
+  width: 40vw !important;
+}
+
+@media (max-width: 575.98px) {
+  .toGraph {
+    display: none;
+    line-height: 1px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .toGraph {
+    display: inline;
+    line-height: 2px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .toGraph {
+    display: inline-block;
+    line-height: 3px;
+  }
+}
+
+@media (min-width: 992px) {
+  .toGraph {
+    display: block;
+    line-height: 4px !important;
+  }
+}
+
+.footer {
+  background-color: #e1ecf8;
+}
+
+.footer i {
+  color: #555555;
+}
+/*# sourceMappingURL=members.css.map */
