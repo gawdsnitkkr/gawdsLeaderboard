@@ -6,10 +6,13 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
 */
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:500,600,700');
 
-@-moz-keyframes rocket-movement { 100% {-moz-transform: translate(1200px,-600px);} }
+ @-moz-keyframes rocket-movement { 100% {-moz-transform: translate(1200px,-600px);} }
 @-webkit-keyframes rocket-movement {100% {-webkit-transform: translate(1200px,-600px); } }
 @keyframes rocket-movement { 100% {transform: translate(1200px,-600px);} }
+
 @-moz-keyframes spin-earth { 100% { -moz-transform: rotate(-360deg); transition: transform 20s;  } }
 @-webkit-keyframes spin-earth { 100% { -webkit-transform: rotate(-360deg); transition: transform 20s;  } }
 @keyframes spin-earth{ 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); transition: transform 20s; } }
@@ -33,19 +36,6 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
     100% { -webkit-transform: rotate(-720deg); transform:rotate(-720deg); }
 }
 
-@-moz-keyframes glow-star {
-    40% { -moz-opacity: 0.3;}
-    90%,100% { -moz-opacity: 1; -moz-transform: scale(1.2);}
-}
-@-webkit-keyframes glow-star {
-    40% { -webkit-opacity: 0.3;}
-    90%,100% { -webkit-opacity: 1; -webkit-transform: scale(1.2);}
-}
-@keyframes glow-star{
-    40% { -webkit-opacity: 0.3; opacity: 0.3;  }
-    90%,100% { -webkit-opacity: 1; opacity: 1; -webkit-transform: scale(1.2); transform: scale(1.2); border-radius: 999999px;}
-}
-
 .spin-earth-on-hover{
     
     transition: ease 200s !important;
@@ -55,57 +45,28 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
 html, body{
     margin: 0;
     width: 100%;
+    background-color: #e1ecf8;
     height: 100%;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 300;
     -webkit-user-select: none; /* Safari 3.1+ */
     -moz-user-select: none; /* Firefox 2+ */
     -ms-user-select: none; /* IE 10+ */
     user-select: none; /* Standard syntax */
+    overflow: hidden !important;
 }
-
-.bg-purple{
-    background: url(https://www.colorhexa.com/bed3f1.png);
-    background-repeat: repeat-x;
-    background-size: cover;
-    background-position: left top;
-    height: 100%;
-    overflow: hidden;
-    
-}
-
-.custom-navbar{
-    padding-top: 15px;
-}
-
-.brand-logo{
-    margin-left: 25px;
-    margin-top: 5px;
-    display: inline-block;
-}
-
-.navbar-links{
-    display: inline-block;
-    float: right;
-    margin-right: 15px;
-    text-transform: uppercase;
-    
-    
-}
-
+/* 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-/*    overflow: hidden;*/
+   overflow: hidden;
     display: flex; 
     align-items: center; 
-}
+} 
 
 li {
     float: left;
     padding: 0px 15px;
-}
+} 
 
 li a {
     display: block;
@@ -113,7 +74,6 @@ li a {
     text-align: center;
     text-decoration: none;
     letter-spacing : 2px;
-    font-size: 12px;
     
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
@@ -124,8 +84,8 @@ li a {
 
 li a:hover {
     color: #ffcb39;
-}
-
+} */
+/* 
 .btn-request{
     padding: 10px 25px;
     border: 1px solid #FFCB39;
@@ -138,7 +98,7 @@ li a:hover {
     color: #fff;
     transform: scale(1.05);
     box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
-}
+} */
 
 .btn-go-home{
     position: relative;
@@ -146,15 +106,15 @@ li a:hover {
     margin: 15px auto;
     width: 100px;
     padding: 10px 15px;
-    border: 1px solid #FFCB39;
+    border: 1px solid #e1ecf8;
     border-radius: 100px;
-    font-weight: 400;
+    font-weight: 600;
     display: block;
-    color: white;
+    color: #555555;
     text-align: center;
     text-decoration: none;
     letter-spacing : 2px;
-    font-size: 11px;
+    font-size: 0.8rem;
     
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
@@ -165,13 +125,15 @@ li a:hover {
 
 .btn-go-home:hover{
     background-color: #FFCB39;
+    border-color: #FFCB39;
+    text-decoration: none;
     color: #fff;
     transform: scale(1.05);
     box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
 }
 
 .central-body{
-/*    width: 100%;*/
+   width: 100%;
     padding: 17% 5% 10% 5%;
     text-align: center;
 }
@@ -195,22 +157,22 @@ li a:hover {
     top: 20%;
     left: 15%;
     z-index: 90;
-/*    animation: spin-earth 100s infinite linear both;*/
+   animation: spin-earth 100s infinite linear both;
 }
 
 .object_moon{
     position: absolute;
     top: 12%;
     left: 25%;
-/*
+
     transform: rotate(0deg);
     transition: transform ease-in 99999999999s;
-*/
+
 }
 
-.earth-moon{
+/* .earth-moon{
     
-}
+} */
 
 .object_astronaut{
     animation: rotate-astronaut 200s infinite linear both alternate;
@@ -228,71 +190,20 @@ li a:hover {
 .image-404{
     position: relative;
     z-index: 100;
+    filter: contrast(10%);
     pointer-events: none;
 }
 
-.stars{
-    background: url(http://salehriaz.com/404Page/img/overlay_stars.svg);
-    background-repeat: repeat;
-    background-size: contain;
-    background-position: left top;
-}
-
-.glowing_stars .star{
-    position: absolute;
-    border-radius: 100%;
-    background-color: #fff;
-    width: 3px;
-    height: 3px;
-    opacity: 0.3;
-    will-change: opacity;
-}
-
-.glowing_stars .star:nth-child(1){
-    top: 80%;
-    left: 25%;
-    animation: glow-star 2s infinite ease-in-out alternate 1s;
-}
-.glowing_stars .star:nth-child(2){
-    top: 20%;
-    left: 40%;
-    animation: glow-star 2s infinite ease-in-out alternate 3s;
-}
-.glowing_stars .star:nth-child(3){
-    top: 25%;
-    left: 25%;
-    animation: glow-star 2s infinite ease-in-out alternate 5s;
-}
-.glowing_stars .star:nth-child(4){
-    top: 75%;
-    left: 80%;
-    animation: glow-star 2s infinite ease-in-out alternate 7s;
-}
-.glowing_stars .star:nth-child(5){
-    top: 90%;
-    left: 50%;
-    animation: glow-star 2s infinite ease-in-out alternate 9s;
-}
-
 @media only screen and (max-width: 600px){
-    .navbar-links{
-        display: none;
-    }
-    
-    .custom-navbar{
-        text-align: center;
-    }
-    
-    .brand-logo img{
-        width: 120px;
-    }
     
     .box_astronaut{
         top: 70%;
     }
     
     .central-body{
-        padding-top: 25%;
+        margin-top: 11vh;
+        overflow: hidden !important;    
+        padding-top: 4vh;
     }
 }
 
@@ -300,32 +211,39 @@ nav, .navbar-brand {
     color: #828484 !important;
   }
   
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
   .topnav {
-    will-change: transform;
+    height: 11vh;
+    width: 100vw;
+    font-weight: 600 !important;
     z-index: 1 !important;
     background-color: #e1ecf8;
-    position: fixed !important;
-    height: 11vh;
-    -webkit-animation: SlideTop 2s forwards;
-            animation: SlideTop 2s forwards;
   }
   
   .topnav .container {
-    padding: 1vh 8vh;
+    padding: 1vh 4vw;
   }
   
   .topnav .active {
     border-bottom: 3px solid #828484;
   }
   
+  .topnav .actLink {
+    color: #555555 !important;
+  }
+  
   .topnav li {
     font-family: 'Noto Sans', sans-serif;
-    color: #828484 !important;
+    font-weight: 600 !important;
+    color: #767779 !important;
     -webkit-transition: 1s all ease;
     transition: 1s all ease;
   }
   
   .topnav li:hover {
-    text-shadow: 0 0 10px #9ecaed;
+    text-shadow: 0 0 10px #d2e0f3;
   }
   
