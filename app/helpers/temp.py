@@ -59,7 +59,7 @@ def weekly_data(username):
     new = []
     newnew= []
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
-    for day in datespan(date(2018, 1, 1), date(2019, 1, 1),delta=timedelta(days=7)):
+    for day in datespan(date(2018, 1, 1), date(2018, 12, 31),delta=timedelta(days=7)):
         time.sleep(1)
         res = requests.get(url.format(str(day)),headers=headers)
         soup = BeautifulSoup(res.text,'lxml')
@@ -124,8 +124,8 @@ import random
 def mongo_pusher(object):
     client = MongoClient()
     client = MongoClient('localhost', 27017)
-    db = client.tests
-    posts = db.users
+    db = client.test
+    posts = db.tests
     posts.insert_one(object)
     
 def basic_info(username):
@@ -144,7 +144,7 @@ def fun(members):
     for year in members:
         for member in members[year]:
             user_objecty = basic_info(member)
-            url = "https://github.com/users/{}/contributions?".format(member)
+            url = "https://github.com/users/{}/contributions".format(member)
             headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
             res = requests.get(url,headers = headers,verify=True)
             soup = BeautifulSoup(res.text,'lxml')
@@ -168,6 +168,6 @@ def fun(members):
             t = weekly_data(member)
             user_objecty["weekly_arr"] = weekly_data(member)
             mongo_pusher(user_objecty)
-            print(sum(t))
+        print(sum(t))
     
 fun(members)

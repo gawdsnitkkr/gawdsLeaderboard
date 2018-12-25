@@ -37,7 +37,9 @@ app.use('/auth', authRouter);
 app.use('/members', memberRouter);
 app.use('/dashboard', dashboardRouter);
 app.get('/', indexRouter);
-app.use("/error",errorRouter)
+app.use("/error",(req,res)=>{
+  res.render("404page.ejs");
+})
 
   
 

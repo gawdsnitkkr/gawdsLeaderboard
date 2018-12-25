@@ -297,36 +297,35 @@ li a:hover {
 }
 
 nav, .navbar-brand {
-  color: #828484 !important;
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-.topnav {
-  font-weight: 600;
-  height: 11vh;
-  z-index: 1 !important;
-  font-family: 'Noto Sans', sans-serif;
-  background-color: #e5edf8;
-}
-
-.topnav .container {
-  padding: 1vh 8vh;
-}
-
-.topnav .active {
-  border-bottom: 3px solid #828484;
-}
-
-.topnav li {
-  font-family: 'Noto Sans', sans-serif;
-  color: #767779 !important;
-  -webkit-transition: 1s all ease;
-  transition: 1s all ease;
-}
-
-.topnav li:hover {
-  text-shadow: 0 0 10px #9ecaed;
-}
+    color: #828484 !important;
+  }
+  
+  .topnav {
+    will-change: transform;
+    z-index: 1 !important;
+    background-color: #e1ecf8;
+    position: fixed !important;
+    height: 11vh;
+    -webkit-animation: SlideTop 2s forwards;
+            animation: SlideTop 2s forwards;
+  }
+  
+  .topnav .container {
+    padding: 1vh 8vh;
+  }
+  
+  .topnav .active {
+    border-bottom: 3px solid #828484;
+  }
+  
+  .topnav li {
+    font-family: 'Noto Sans', sans-serif;
+    color: #828484 !important;
+    -webkit-transition: 1s all ease;
+    transition: 1s all ease;
+  }
+  
+  .topnav li:hover {
+    text-shadow: 0 0 10px #9ecaed;
+  }
+  
