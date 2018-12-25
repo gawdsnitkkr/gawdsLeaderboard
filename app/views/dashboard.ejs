@@ -27,13 +27,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto mr-3 mt-2 mt-lg-0">
           <li class="nav-item mr-3 active">
-            <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item mr-3">
             <a class="nav-link" href="#">STATS</a>
           </li>
           <li class="nav-item mr-3">
-            <a class="nav-link" href="#">ABOUT US</a>
+            <a class="nav-link" href="/about">ABOUT US</a>
           </li>
         </ul>
       </div>
@@ -89,9 +89,9 @@
             aria-controls="nav-contact" aria-selected="false">All activity</a>
         </div>
       </nav>
-      <div class="tab-content h-75 py-2 d-flex justify-content-center align-items-center" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <% include ./partials/plotweek %>
+      <div class="tab-content h-75 py-2 d-flex justify-content-center align-items-center" id="nav-tabContent"  style="background-color:dbe6f5">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style="background-color:dbe6f5">
+        <%include ./partials/TileGraph %>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <% include ./partials/plotmonth %>
