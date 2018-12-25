@@ -10,13 +10,14 @@ mongoose.connection
         console.log("COuld not connect as ",err)
     });
 
-async function graphGen(username,res){
+function graphGen(username,res){
   user.findOne({"login":username}).then(async user=>{
     if(!user){
       res.redirect('/error');
     }
     else{
       const  process = await spawn('python',["./graphGen.py", username]);
+      console.log(process)
       process.stdout.on('data', function(data) { 
       console.log(data.toString())}); 
       res.render('dashboard.ejs', {Name: user.login, Bio: user.bio, Year: user.year, Link : user.avatar_url});

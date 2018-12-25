@@ -24,7 +24,7 @@ def plt_html_line(data,username,NoHtml):
 def person_plot_month(username,NoHtml):    
     client = MongoClient()
     client = MongoClient('localhost', 27017)
-    db = client.test
+    db = client.tests
     posts = db.users
     query = posts.find({"login":username})
     for item in query:
@@ -34,7 +34,7 @@ def person_plot_month(username,NoHtml):
         while i<len(data):
             q.append(sum(data[i:i+5]))
             i=i+5
-        plt_html_scatter([0,1,2,3,4,5,6,7,8,9],q,NoHtml)
+        plt_html_scatter([0,1,2,3,4,5,6,7,8,9,10],q,NoHtml)
 
 def plt_html_scatter(data,data2,NoHtml):
     fig = plt.figure()
@@ -60,20 +60,22 @@ def plt_html_scatter(data,data2,NoHtml):
 def tile_graph(username):
     client = MongoClient()
     client = MongoClient('localhost', 27017)
-    db = client.test
+    db = client.tests
     posts = db.users
     query = posts.find({"login":username})
     for item in query:
         data = item["graph"]
+        open("./app/views/partials/TileGraph.ejs", 'w').close()
         tile = open("./app/views/partials/TileGraph.ejs",'w')
         tile.write(data)
         tile.close
-    print("Saved!")     
+        print(len(data))
+
 
 def person_plot_week(username,NoHtml): 
     client = MongoClient()
     client = MongoClient('localhost', 27017)
-    db = client.test
+    db = client.tests
     posts = db.users
     query = posts.find({"login":username})
     for item in query:
@@ -82,15 +84,25 @@ def person_plot_week(username,NoHtml):
 
 username = sys.argv[1]
 #username = "DumbMachine"
-# person_plot_month(username, NoHtml=True)
-# person_plot_month(username, NoHtml=False)
+person_plot_month(username, NoHtml=True)
+person_plot_month(username, NoHtml=False)
 person_plot_week(username, NoHtml=True)
 person_plot_week(username,NoHtml=False)
-print("week")
-
 person_plot_month(username, NoHtml=True)
-print("Plot Created1!!")
 person_plot_month(username,NoHtml=False)
-print("Plot Created2!!")
-
 tile_graph(username)
+print("Saved!") 
+
+client = MongoClient()
+client = MongoClient('localhost', 27017)
+db = client.tests
+posts = db.users
+query = posts.find({"login":"war-turtle"})
+for item in query:
+    i=0
+    q=[]
+    data = item["weekly_arr"]
+    while i<len(data):
+        q.append(sum(data[i:i+5]))
+        i=i+5
+    print(q)
