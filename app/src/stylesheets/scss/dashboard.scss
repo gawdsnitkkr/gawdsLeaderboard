@@ -1,0 +1,178 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+@mixin transition($duration) {
+  -webkit-transition: $duration all ease;
+  -moz-transition: $duration all ease;
+  -ms-transition: $duration all ease;
+  -o-transition: $duration all ease;
+  transition: $duration all ease;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $top1, $left1, $blur1, $color1) {
+    -webkit-box-shadow: $top $left $blur $color, $top1 $left1 $blur1 $color1;
+    -moz-box-shadow: $top $left $blur $color, $top1 $left1 $blur1 $color1;
+    box-shadow: $top $left $blur $color, $top1 $left1 $blur1 $color1;
+}
+
+$colorF: #828484;
+$colorS: #e5edf8;
+$orgColor: #d2e0f3;
+$usrName: #555555;
+$userData: #dbe6f5;
+$activeTab: #aecbf3;
+$colorNormal: #767779;
+
+* {
+  font-family: Montserrat;
+}
+
+
+.cont, {
+  background-color: $colorS !important;
+}
+
+nav, .navbar-brand {
+  color: $colorF !important;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+
+.topnav {
+  height: 11vh;
+  width: 100vw;
+  font-weight: 600 !important;
+  z-index: 1 !important;
+  background-color: $colorS;
+
+  .container {
+    padding: 1vh 4vw;
+  }
+  .active {
+    border-bottom: 3px solid $colorF;
+  }
+  .actLink {
+    color: $usrName !important;
+  }
+  li {
+    font-family: 'Noto Sans', sans-serif;
+    color: #767779 !important;
+    @include transition(1s);
+  }
+  li:hover {
+    text-shadow: 0 0 10px $orgColor;
+  }
+  
+} 
+
+.jumbotron {
+  margin-top: 11vh;
+  padding: 3vh 5vh 6vh 5vh !important;
+  margin-bottom: 0 !important;
+  color: white;
+  background-color: $colorS !important;
+  min-height: 89vh;
+    .name {
+      margin-top: 5vh;
+    }
+    h1 {
+      font-family: 'Noto Sans';
+      color: $usrName !important;
+      font-size: 9vh !important;
+      font-weight: bold !important;
+    }
+    .master {
+      position: relative;
+      @media only screen and (max-width: 768px) { 
+        width: 100%;
+      }
+      @media only screen and (min-width: 768px) { 
+        width: 80%;
+      }
+      padding-top: 2vh;
+      color: #767779;
+      padding-bottom: 2vh;
+      min-height: 77vh !important;
+        .username {
+          background-color: $userData;
+          font-weight: bold;
+          @include box-shadow(0, 0, 5px , rgba(37, 35, 35, 0.281), 0, 2px, 3px, rgba(0, 0, 0, 0.281));
+          margin: 0 !important;
+          padding-bottom: 8vh;
+        }
+        .rounded-circle {
+          background-size: 100% 100%;
+          width: 15rem;
+          height: 15rem;
+        }
+        .current {
+          max-height: 10vh;
+          margin: 2vh 0;
+        }
+        .container-fluid {
+          margin-top: 3vh;
+        }
+    }
+}
+
+.org {
+  h3 {
+  font-weight: bolder !important;
+  }
+  background-color: $orgColor;
+  @include box-shadow(0, 0px, 5px, rgba(37, 35, 35, 0.281), 0, 2px, 5px, rgba(37, 35, 35, 0.281));
+  padding-bottom: 2vh;
+  padding-top: 1vh;
+}
+
+.graphDisplay {
+  height: 85vh;
+  background-color: $colorS;
+  font-weight: bold;
+  color: $usrName !important;
+  .nav-tabs > a {
+    color: $usrName;
+  }
+  .active {
+    background-color: $activeTab !important;
+    border-color: $activeTab !important;
+  }
+    .container {
+      height: 75vh;
+      padding: 8vh 12vh 6vh 12vh;
+      background-color: $userData;
+      @include box-shadow(0, 0px, 5px, rgba(37, 35, 35, 0.281), 0, 2px, 3px, rgba(0, 0, 0, 0.281));
+        
+        .tab-content {
+          padding-bottom: 2vh;
+          height: 80%;
+          color: #767779;
+          .tab-pane {
+            height: 90%;
+            background-color: $orgColor !important;
+            @include box-shadow(0, 0px, 5px, rgba(37, 35, 35, 0.281), 0, 2px, 3px, rgba(0, 0, 0, 0.281));
+            width: 100%; 
+          }
+            .row {
+              margin: 0 !important;
+              height: 100%;
+            }
+        }
+    }
+}
+
+.footer {
+  background-color: $colorS;  
+  width: 100vw;
+  color: $usrName !important;
+  font-weight: 500;
+    i {
+      color: $usrName;
+    }
+}
+
+
