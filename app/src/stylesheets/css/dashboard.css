@@ -1,8 +1,8 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
-@import url("https://fonts.googleapis.com/css?family=Raleway");
-@import url("https://fonts.googleapis.com/css?family=Quicksand");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
 * {
   font-family: Montserrat;
 }
@@ -20,19 +20,23 @@ nav, .navbar-brand {
 }
 
 .topnav {
-  font-weight: 600;
   height: 11vh;
+  width: 100vw;
+  font-weight: 600 !important;
   z-index: 1 !important;
-  font-family: 'Noto Sans', sans-serif;
   background-color: #e5edf8;
 }
 
 .topnav .container {
-  padding: 1vh 8vh;
+  padding: 1vh 4vw;
 }
 
 .topnav .active {
   border-bottom: 3px solid #828484;
+}
+
+.topnav .actLink {
+  color: #555555 !important;
 }
 
 .topnav li {
@@ -43,7 +47,7 @@ nav, .navbar-brand {
 }
 
 .topnav li:hover {
-  text-shadow: 0 0 10px #9ecaed;
+  text-shadow: 0 0 10px #d2e0f3;
 }
 
 .jumbotron {
@@ -60,52 +64,60 @@ nav, .navbar-brand {
 }
 
 .jumbotron h1 {
-  font-family: 'Raleway';
+  font-family: 'Noto Sans';
   color: #555555 !important;
-  letter-spacing: 8px !important;
-  font-weight: bolder;
+  font-size: 9vh !important;
+  font-weight: bold !important;
 }
 
 .jumbotron .master {
   position: relative;
-  width: 90%;
   padding-top: 2vh;
   color: #767779;
   padding-bottom: 2vh;
   min-height: 77vh !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .jumbotron .master {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .jumbotron .master {
+    width: 80%;
+  }
+}
+
 .jumbotron .master .username {
   background-color: #dbe6f5;
   font-weight: bold;
-  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
-          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  -webkit-box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
   margin: 0 !important;
-  padding-bottom: 3vh;
+  padding-bottom: 8vh;
 }
 
 .jumbotron .master .rounded-circle {
-  background-color: #fccf0c;
-  width: 35vh;
-  height: 35vh;
-}
-
-.jumbotron .master .rounded-circle i {
-  color: #e14e6e;
+  background-size: 100% 100%;
+  width: 15rem;
+  height: 15rem;
 }
 
 .jumbotron .master .current {
   max-height: 10vh;
+  margin: 2vh 0;
 }
 
 .jumbotron .master .container-fluid {
   margin-top: 3vh;
-  }
+}
 
 .org {
   background-color: #d2e0f3;
   -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
-          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
+  box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
   padding-bottom: 2vh;
   padding-top: 1vh;
 }
@@ -121,6 +133,10 @@ nav, .navbar-brand {
   color: #555555 !important;
 }
 
+.graphDisplay .nav-tabs > a {
+  color: #555555;
+}
+
 .graphDisplay .active {
   background-color: #aecbf3 !important;
   border-color: #aecbf3 !important;
@@ -128,67 +144,39 @@ nav, .navbar-brand {
 
 .graphDisplay .container {
   height: 75vh;
-  padding: 10vh 12vh 6vh 12vh;
+  padding: 8vh 12vh 6vh 12vh;
   background-color: #dbe6f5;
   -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
-          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
 }
 
 .graphDisplay .container .tab-content {
-  background-color: #d2e0f3;
-  color: white;
+  padding-bottom: 2vh;
+  height: 80%;
+  color: #767779;
+}
+
+.graphDisplay .container .tab-content .tab-pane {
+  height: 90%;
+  background-color: #d2e0f3 !important;
+  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  width: 100%;
+}
+
+.graphDisplay .container .tab-content .row {
+  margin: 0 !important;
+  height: 100%;
 }
 
 .footer {
   background-color: #e5edf8;
+  width: 100vw;
+  color: #555555 !important;
+  font-weight: 500;
 }
 
 .footer i {
-  color: rgba(0, 0, 0, 0.904);
-}
-
-section {
-  padding: 60px 0;
-}
-
-#footer {
-  -webkit-box-shadow: 4px 0 0 0 black;
-          box-shadow: 4px 0 0 0 black;
-  background: #007b5e !important;
-}
-
-#footer a {
-  color: #c1a8eb;
-  text-decoration: none !important;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-#footer ul.social li {
-  padding: 3px 0;
-}
-
-#footer ul.social li a i {
-  margin-right: 5px;
-  font-size: 25px;
-  -webkit-transition: .5s all ease;
-  transition: .5s all ease;
-}
-
-#footer ul.social li:hover a i {
-  font-size: 30px;
-  margin-top: -10px;
-}
-
-#footer ul.social li a,
-#footer ul.quick-links li a {
-  color: #ffffff;
-}
-
-#footer ul.social li a:hover {
-  color: #eeeeee;
-}
-.socialic{
-  padding-bottom: 20px;
+  color: #555555;
 }
 /*# sourceMappingURL=dashboard.css.map */

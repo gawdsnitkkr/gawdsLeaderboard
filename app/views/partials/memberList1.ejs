@@ -13,17 +13,16 @@
         <%= counter[0] %>
       </td>
       <td>
-      <a href="/dashboard/<%= users.login %>">
-      <div style="height:100%;width:100%">
-        <%= users.login%>
-      </div>
-    </a>
+        <a href="/dashboard/<%= users.login %>">
+          <div style="height:100%;width:100%">
+            <%= users.login%>
+          </div>
+        </a>
       </td>
-      <td class="toShow">Followers:
-        <%= users.followers %>
+      <td class="toShow">Repositories:
+        <%= users.public_repos %>
       </td>
-      <td class="toShow">Following:
-        <%= users.following %>
+      <td class="toShow">
       </td>
     </tr>
     <% counter[0]++ %>

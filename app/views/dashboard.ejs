@@ -1,6 +1,4 @@
-
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-  <link rel="stylesheet" href="/stylesheets/css/dashboard.css">
+  <link rel="stylesheet" href="stylesheets/css/dashboard.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
@@ -27,13 +25,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto mr-3 mt-2 mt-lg-0">
           <li class="nav-item mr-3 active">
-            <a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
+            <a class="nav-link actLink" href="#">DASHBOARD<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item mr-3">
-            <a class="nav-link" href="#">STATS</a>
+            <a class="nav-link" href="/members">MEMBERS</a>
           </li>
           <li class="nav-item mr-3">
-            <a class="nav-link" href="/about">ABOUT US</a>
+            <a class="nav-link" href="/logout">LOG OUT</a>
           </li>
         </ul>
       </div>
@@ -44,33 +42,39 @@
     <div class="container-fluid master">
       <div class="row username">
         <div class="col-md-4 d-flex justify-content-center align-items-center">
-        <img src=         "<%=Link %>" style="border-radius: 60%;"  width="240" height="240">
+          <div class="container-fluid rounded-circle d-flex justify-content-center align-items-center" style="background: url('<%= Link %>');">
+          </div>
         </div>
         <div class="col-md-8 name">
-          <h1>            <%= Name%>
+          <h1 class="text-center text-truncate">Hello
+            <%= Name %>
           </h1>
           <div class="row current container justify-content-end">
-            <div class="col-4">
-                          <%=Year%>
+            <div class="col-5">
+              <%= Year %>
             </div>
           </div>
           <div class="container-fluid row justify-content-start">
-            <div class="col-lg-10">
-                          <%=Bio%>
+            <div class="col-lg-10 mt-2 text-justify">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et consequat neque. Quisque fringilla, leo
+              quis vehicula aliquet, diam nibh tempus sem, eu bibendum lectus mi a magna. Sed nunc elit, suscipit nec
+              semper a, venenatis ut sem."
+              <%= Bio %>
             </div>
           </div>
         </div>
       </div>
       <div class="container-fluid  org">
         <div class="container-fluid mb-4 d-flex justify-content-center align-items-center">
-          <h3>ORGANISATIONS</h3>
+          <h3>CONTACT</h3>
         </div>
         <div class="row container d-flex justify-content-center align-items-center">
-          <div class="col text-center socialic"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></div>
-          <div class="col text-center socialic"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></div>
-          <div class="col text-center socialic"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></div>
-          <div class="col text-center socialic"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></div>
-          <div class="col text-center socialic"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></div>
+          <div class="col text-center"><i class="fa fa-facebook fa-3x"></i></div>
+          <div class="col text-center"><i class="fa fa-google fa-3x"></i></div>
+          <div class="col text-center">
+            <a href="https://github.com/<%= Name %>"><i class="fa fa-github fa-3x"></i></a></div>
+          <div class="col text-center"><i class="fa fa-instagram fa-3x"></i></div>
+          <div class="col text-center"><i class="fa fa-envelope fa-3x"></i></div>
         </div>
       </div>
     </div>
@@ -78,7 +82,6 @@
 
   <div class="container-fluid py-3 graphDisplay d-flex justify-content-center align-items-center">
     <div class="container">
-      <!-- Tab layout -->
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
@@ -89,15 +92,22 @@
             aria-controls="nav-contact" aria-selected="false">All activity</a>
         </div>
       </nav>
-      <div class="tab-content h-75 py-2 d-flex justify-content-center align-items-center" id="nav-tabContent"  style="background-color:dbe6f5">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style="background-color:dbe6f5">
-        <%include ./partials/TileGraph %>
+      <div class="tab-content d-flex justify-content-center align-items-center" id="nav-tabContent">
+        <div class="tab-pane fade show active text-center" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="row">
+            <div class="col-md-7 d-flex justify-content-center align-items-center">
+              <%include ./partials/TileGraph %>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+              Graph 2
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <% include ./partials/plotmonth %>
+          <% include ./partials/plotmonth %>
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <% include ./partials/plotweek %>
+          <% include ./partials/plotweek %>
         </div>
       </div>
 
@@ -107,7 +117,7 @@
   <nav class="navbar navbar-expand footer navbar-light bg-faded">
     <div class="container">
       <span>&copy All rights Reversed.<a class="navbar-brand" href="https://www.gawds.in">GAWDS.IN</a></span>
-      <ul class="navbar-nav ml-auto mr-3 mt-2 mt-lg-0">
+      <ul class="navbar-nav ml-auto mr-3 mt-2 mt-lg-0 text-truncate">
         <li class="nav-item mr-3">
           <a class="nav-link" href="#"><i class="fa fa-facebook fa-2x"></i></a>
         </li>
@@ -135,12 +145,6 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-</body>
-
-</html>
-  
-  
-
 </body>
 
 </html>
