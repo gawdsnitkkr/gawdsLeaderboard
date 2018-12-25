@@ -20,8 +20,12 @@ function graphGen(username,res){
       console.log(process)
       process.stdout.on('data', function(data) { 
       console.log(data.toString())}); 
-      res.render('dashboard.ejs', {Name: user.login, Bio: user.bio, Year: user.year, Link : user.avatar_url});
-      
+      res.render('dashboard.ejs', {
+        Name: user.login, 
+        Bio: user.bio, 
+        Year: user.year, 
+        Link : user.avatar_url
+      });
       }
     })
   }

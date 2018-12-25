@@ -1,9 +1,10 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700");
 * {
   font-family: Montserrat;
-  font-weight: 600;
 }
 
 body {
@@ -18,33 +19,39 @@ nav, .navbar-brand {
   color: #828484 !important;
 }
 
+.navbar-brand {
+  font-weight: bold;
+}
+
 .topnav {
-  will-change: transform;
+  height: 11vh;
+  width: 100vw;
+  font-weight: 600 !important;
   z-index: 1 !important;
   background-color: #e1ecf8;
-  position: fixed !important;
-  height: 11vh;
-  -webkit-animation: SlideTop 2s forwards;
-          animation: SlideTop 2s forwards;
 }
 
 .topnav .container {
-  padding: 1vh 8vh;
+  padding: 1vh 4vw;
 }
 
 .topnav .active {
   border-bottom: 3px solid #828484;
 }
 
+.topnav .actLink {
+  color: #555555 !important;
+}
+
 .topnav li {
   font-family: 'Noto Sans', sans-serif;
-  color: #828484 !important;
+  color: #767779 !important;
   -webkit-transition: 1s all ease;
   transition: 1s all ease;
 }
 
 .topnav li:hover {
-  text-shadow: 0 0 10px #9ecaed;
+  text-shadow: 0 0 10px #d2e0f3;
 }
 
 .jumbotron {
@@ -61,7 +68,7 @@ nav, .navbar-brand {
 }
 
 .jumbotron h1 {
-  font-family: 'Noto Sans';
+  font-family: 'Quicksand';
   color: #555555 !important;
   font-size: 9vh !important;
   font-weight: bold !important;
@@ -77,9 +84,8 @@ nav, .navbar-brand {
 
 .jumbotron .master .username {
   background-color: #d3e0f3;
-  font-weight: bold;
-  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
-          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  -webkit-box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
+  box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
   margin: 0 !important;
   padding-top: 4vh;
   padding-bottom: 4vh;
@@ -97,8 +103,8 @@ nav, .navbar-brand {
 .yearData {
   background-color: #dae6f4;
   cursor: pointer;
-  -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
-          box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
+  -webkit-box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(0, 0, 0, 0.281);
+  box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(0, 0, 0, 0.281);
   padding-bottom: 3vh;
   padding-top: 3vh;
 }
@@ -115,8 +121,8 @@ nav, .navbar-brand {
 }
 
 .yearData .card-header {
-  -webkit-box-shadow: 0 0px 5px rgba(78, 73, 73, 0.281), 0 2px 5px rgba(78, 73, 73, 0.281);
-          box-shadow: 0 0px 5px rgba(78, 73, 73, 0.281), 0 2px 5px rgba(78, 73, 73, 0.281);
+  -webkit-box-shadow: 0 0 5px rgba(78, 73, 73, 0.281), 0 2px 5px rgba(78, 73, 73, 0.281);
+  box-shadow: 0 0 5px rgba(78, 73, 73, 0.281), 0 2px 5px rgba(78, 73, 73, 0.281);
   margin: 0 0 1vh 0;
   background-color: #d3e0f3;
 }
@@ -128,6 +134,9 @@ nav, .navbar-brand {
 
 .yearData .card-body {
   padding: 0;
+  font-weight: 500 !important;
+  -webkit-box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(0, 0, 0, 0.281);
+  box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(0, 0, 0, 0.281);
 }
 
 .yearData thead {
@@ -150,7 +159,7 @@ nav, .navbar-brand {
 
 @media only screen and (min-width: 768px) {
   .yearData .toShow {
-    display: initial;
+    display: table-cell;
   }
 }
 
@@ -209,6 +218,8 @@ nav, .navbar-brand {
 
 .footer {
   background-color: #e1ecf8;
+  width: 100vw;
+  font-weight: 500;
 }
 
 .footer i {
