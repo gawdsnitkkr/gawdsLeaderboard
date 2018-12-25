@@ -69,7 +69,7 @@ def tile_graph(username):
         tile = open("./app/views/partials/TileGraph.ejs",'w')
         tile.write(data)
         tile.close
-        print(len(data))
+        #print(len(data))
 
 
 def person_plot_week(username,NoHtml): 
@@ -91,18 +91,4 @@ person_plot_week(username,NoHtml=False)
 person_plot_month(username, NoHtml=True)
 person_plot_month(username,NoHtml=False)
 tile_graph(username)
-print("Saved!") 
-
-client = MongoClient()
-client = MongoClient('localhost', 27017)
-db = client.tests
-posts = db.users
-query = posts.find({"login":"war-turtle"})
-for item in query:
-    i=0
-    q=[]
-    data = item["weekly_arr"]
-    while i<len(data):
-        q.append(sum(data[i:i+5]))
-        i=i+5
-    print(q)
+#print("Saved!") 
