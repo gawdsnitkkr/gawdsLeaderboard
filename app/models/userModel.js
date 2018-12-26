@@ -14,7 +14,8 @@ const UserSchema = Scheman({
 "year" : String,
 "weekly_arr": Array,
 "contributions":String,
-"graph":String
+"graph":String,
+"access_token":String
 });
 
 

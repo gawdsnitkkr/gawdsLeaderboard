@@ -24,7 +24,7 @@ router.get('/login', (req, res) => {
 });
 
 router.all('/redirect', (req, res) => {
-  console.log('User received')
+  console.log('User received');
   const code = req.query.code;
   const returnedState = req.query.state;
 
@@ -61,7 +61,7 @@ router.all('/redirect', (req, res) => {
           User.findOne({ "login": userLogin }).then((user) => {
             user.access_token = accessToken;
             res.redirect('/dashboard/:username', {
-              username: body.data[0].owner.login
+              username: userLogin
             });
           }).catch((err) => {
             console.log('Database authentication error:' + err);
