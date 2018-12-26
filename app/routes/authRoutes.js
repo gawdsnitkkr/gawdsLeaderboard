@@ -39,10 +39,6 @@ router.all('/redirect', (req, res) => {
           state: csrfString
         })
     }, (error, response, body) => {
-      if(error) {
-        console.log(error);
-      }
-      else {
       // key.keys.accessToken = qs.parse(body).access_token;
       // octokit.authenticate({
       //   type: 'oauth',
@@ -54,7 +50,7 @@ router.all('/redirect', (req, res) => {
           headers: {
             'user-agent': key.keys.userAgent,
             authorization: 'token' + accessToken
-          }
+          },
         }).then((body) => {
           let userLogin = body.data[0].owner.login;
           console.log(userLogin);
@@ -67,9 +63,10 @@ router.all('/redirect', (req, res) => {
             console.log('Database authentication error:' + err);
             res.redirect('/');
           });
-        })
+        }).catch((err) => {
+          console.log(err);
+        });
 
-      }
     });
   } else {
     res.redirect('/');
