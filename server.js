@@ -39,8 +39,10 @@ app.use('/dashboard', dashboardRouter);
 app.get('/', indexRouter);
 app.use("/error",(req,res)=>{
   res.render("404page.ejs");
-})
-
+});
+app.get('*', function(req, res){
+  res.render("404page.ejs");
+});
   
 
 

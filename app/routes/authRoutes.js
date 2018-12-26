@@ -62,7 +62,7 @@ router.all('/redirect', (req, res) => {
           //   res.redirect('/');
           // });
 
-          res.redirect('/dashboard/:username', {
+          res.redirect('/dashboard/:username',{
             username: userLogin
           });
         }).catch((err) => {
