@@ -7,6 +7,10 @@
   font-family: Montserrat;
 }
 
+body {
+  background-color: #e5edf8 !important;
+}
+
 .cont {
   background-color: #e5edf8 !important;
 }
@@ -22,6 +26,8 @@ nav, .navbar-brand {
 .topnav {
   height: 11vh;
   width: 100vw;
+  -webkit-animation: SlideTop 2s forwards;
+          animation: SlideTop 2s forwards;
   font-weight: 600 !important;
   z-index: 1 !important;
   background-color: #e5edf8;
@@ -118,6 +124,8 @@ nav, .navbar-brand {
   background-color: #d2e0f3;
   -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
   box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 5px rgba(37, 35, 35, 0.281);
+  -webkit-animation: SlideUp 2s forwards;
+          animation: SlideUp 2s forwards;
   padding-bottom: 2vh;
   padding-top: 1vh;
 }
@@ -143,8 +151,8 @@ nav, .navbar-brand {
 }
 
 .graphDisplay .container {
-  height: 75vh;
-  padding: 8vh 12vh 6vh 12vh;
+  height: 80vh;
+  padding: 8vh 4vw 6vh 4vw;
   background-color: #dbe6f5;
   -webkit-box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
   box-shadow: 0 0px 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
@@ -152,7 +160,7 @@ nav, .navbar-brand {
 
 .graphDisplay .container .tab-content {
   padding-bottom: 2vh;
-  height: 80%;
+  height: 90%;
   color: #767779;
 }
 
@@ -165,7 +173,8 @@ nav, .navbar-brand {
 }
 
 .graphDisplay .container .tab-content .row {
-  margin: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   height: 100%;
 }
 
@@ -178,5 +187,49 @@ nav, .navbar-brand {
 
 .footer i {
   color: #555555;
+}
+
+@-webkit-keyframes SlideTop {
+  0% {
+    -webkit-transform: translateY(-11vh);
+            transform: translateY(-11vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes SlideTop {
+  0% {
+    -webkit-transform: translateY(-11vh);
+            transform: translateY(-11vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes SlideUp {
+  0% {
+    -webkit-transform: translateY(30vh);
+            transform: translateY(30vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes SlideUp {
+  0% {
+    -webkit-transform: translateY(30vh);
+            transform: translateY(30vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 /*# sourceMappingURL=dashboard.css.map */

@@ -49,6 +49,7 @@ nav, .navbar-brand {
 .topnav {
   height: 11vh;
   width: 100vw;
+  animation: SlideTop 2s forwards;
   font-weight: 600 !important;
   z-index: 1 !important;
   background-color: $colorS;
@@ -89,6 +90,17 @@ nav, .navbar-brand {
       font-size: 9vh !important;
       font-weight: bold !important;
     }
+    h1.forBig {
+      @media only screen and (max-width: 768px) { 
+        display: none;
+      }
+      
+    }
+    h1.forSmall {
+      @media only screen and (min-width: 768px) { 
+        display: none;
+      }
+    }
     .master {
       position: relative;
       width: 80%;
@@ -99,6 +111,8 @@ nav, .navbar-brand {
           background-color: $userData;
           @include box-shadow(0, 0, 5px , rgba(37, 35, 35, 0.281), 0, 2px, 3px, rgba(0, 0, 0, 0.281));
           margin: 0 !important;
+          will-change: transform;
+          animation: UserDrop 3s forwards;
           padding-top: 4vh;
           padding-bottom: 4vh; 
         }
@@ -139,6 +153,10 @@ nav, .navbar-brand {
   }
   thead {
     background-color: #cad8ed !important;
+  }
+  a.aGawds {
+    color: #767779 !important;
+    text-decoration: none !important;
   }
   tbody {
     background-color: $lighttd;
@@ -209,4 +227,14 @@ nav, .navbar-brand {
     i {
       color: $usrName;
     }
+}
+
+@keyframes SlideTop {
+  0% { transform: translateY(-11vh) }
+  100% { transform: translateY(0) }
+}
+
+@keyframes UserDrop {
+  0% { display: none;transform: scale(0.1) }
+  100% { transform: scale(1) }
 }

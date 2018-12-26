@@ -47,6 +47,7 @@ nav, .navbar-brand {
 .topnav {
   height: 11vh;
   width: 100vw;
+  animation: SlideTop 2s forwards;
   font-weight: 600 !important;
   z-index: 1 !important;
   background-color: $colorS;
@@ -73,9 +74,11 @@ nav, .navbar-brand {
 
 .jumbotron {
   background-image: url('/images/gawds4.jpg');
+  will-change: transform, opacity;
   background-repeat: no-repeat;
   filter: saturate(110%);
   background-size: 100% 100%;
+  animation: fadeIn 6s;
   color: white;
   font-weight: bold;
   text-shadow: 0 0 10px black;
@@ -98,6 +101,8 @@ nav, .navbar-brand {
       background-color:$colorBtn !important;
       -moz-border-radius:28px;
       -webkit-border-radius:28px;
+      position: relative;
+      animation: btnSlideBtm 2s forwards;
       font-family: 'Noto Sans', sans-serif;
       border-radius:28px;
       border:1px solid $colorBtn;
@@ -108,9 +113,9 @@ nav, .navbar-brand {
       padding: 10px 50px;
   }
   a:hover {
-    border-color: #9ecaed;
-    @include box-shadow(0, 0, 10px, #9ecaed);
-    text-shadow: 0 0 10px #9ecaed;
+    border-color: $colorBtn;
+    border-width: 2px;
+    @include box-shadow(0, 20px, 20px, rgba(0,0,0,0.1));
   }
 }
 
@@ -160,4 +165,19 @@ nav, .navbar-brand {
     i {
       color: $usrName;
     }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes SlideTop {
+  0% { transform: translateY(-11vh) }
+  100% { transform: translateY(0) }
+}
+
+@keyframes btnSlideBtm {
+  0% { transform: translateY(37vh)}
+  100% { transform: translateY(0) }
 }
