@@ -26,6 +26,8 @@ nav, .navbar-brand {
 .topnav {
   height: 11vh;
   width: 100vw;
+  -webkit-animation: SlideTop 2s forwards;
+          animation: SlideTop 2s forwards;
   font-weight: 600 !important;
   z-index: 1 !important;
   background-color: #e1ecf8;
@@ -74,6 +76,18 @@ nav, .navbar-brand {
   font-weight: bold !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .jumbotron h1.forBig {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .jumbotron h1.forSmall {
+    display: none;
+  }
+}
+
 .jumbotron .master {
   position: relative;
   width: 80%;
@@ -87,6 +101,9 @@ nav, .navbar-brand {
   -webkit-box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
   box-shadow: 0 0 5px rgba(37, 35, 35, 0.281), 0 2px 3px rgba(0, 0, 0, 0.281);
   margin: 0 !important;
+  will-change: transform;
+  -webkit-animation: UserDrop 3s forwards;
+          animation: UserDrop 3s forwards;
   padding-top: 4vh;
   padding-bottom: 4vh;
 }
@@ -141,6 +158,11 @@ nav, .navbar-brand {
 
 .yearData thead {
   background-color: #cad8ed !important;
+}
+
+.yearData a.aGawds {
+  color: #767779 !important;
+  text-decoration: none !important;
 }
 
 .yearData tbody {
@@ -224,5 +246,51 @@ nav, .navbar-brand {
 
 .footer i {
   color: #555555;
+}
+
+@-webkit-keyframes SlideTop {
+  0% {
+    -webkit-transform: translateY(-11vh);
+            transform: translateY(-11vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes SlideTop {
+  0% {
+    -webkit-transform: translateY(-11vh);
+            transform: translateY(-11vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes UserDrop {
+  0% {
+    display: none;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes UserDrop {
+  0% {
+    display: none;
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=members.css.map */

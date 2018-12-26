@@ -1,4 +1,4 @@
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/* @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"); */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
@@ -26,6 +26,8 @@ nav, .navbar-brand {
 .topnav {
   height: 11vh;
   width: 100vw;
+  -webkit-animation: SlideTop 2s forwards;
+          animation: SlideTop 2s forwards;
   font-weight: 600 !important;
   z-index: 1 !important;
   background-color: #e1ecf8;
@@ -56,10 +58,13 @@ nav, .navbar-brand {
 
 .jumbotron {
   background-image: url("/images/gawds4.jpg");
+  will-change: transform, opacity;
   background-repeat: no-repeat;
   -webkit-filter: saturate(110%);
           filter: saturate(110%);
   background-size: 100% 100%;
+  -webkit-animation: fadeIn 6s;
+          animation: fadeIn 6s;
   color: white;
   font-weight: bold;
   text-shadow: 0 0 10px black;
@@ -87,6 +92,9 @@ nav, .navbar-brand {
   background-color: #f79e36 !important;
   -moz-border-radius: 28px;
   -webkit-border-radius: 28px;
+  position: relative;
+  -webkit-animation: btnSlideBtm 2s forwards;
+          animation: btnSlideBtm 2s forwards;
   font-family: 'Noto Sans', sans-serif;
   border-radius: 28px;
   border: 1px solid #f79e36;
@@ -98,10 +106,10 @@ nav, .navbar-brand {
 }
 
 .buttonContainer a:hover {
-  border-color: #9ecaed;
-  -webkit-box-shadow: 0 0 10px #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
-  text-shadow: 0 0 10px #9ecaed;
+  border-color: #f79e36;
+  border-width: 2px;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card {
@@ -162,5 +170,67 @@ nav, .navbar-brand {
 
 .footer i {
   color: #555555;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes SlideTop {
+  0% {
+    -webkit-transform: translateY(-11vh);
+            transform: translateY(-11vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes SlideTop {
+  0% {
+    -webkit-transform: translateY(-11vh);
+            transform: translateY(-11vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes btnSlideBtm {
+  0% {
+    -webkit-transform: translateY(37vh);
+            transform: translateY(37vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes btnSlideBtm {
+  0% {
+    -webkit-transform: translateY(37vh);
+            transform: translateY(37vh);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 /*# sourceMappingURL=index.css.map */
