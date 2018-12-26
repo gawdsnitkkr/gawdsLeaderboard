@@ -55,7 +55,7 @@ router.all('/redirect', (req, res) => {
           let userLogin = body.data[0].owner.login;
           console.log(userLogin);
           User.findOne({ "login": userLogin }).then((user) => {
-            user.access_token = accessToken;
+            key.keys.accessToken = accessToken;
             res.redirect('/dashboard/:username', {
               username: userLogin
             });
