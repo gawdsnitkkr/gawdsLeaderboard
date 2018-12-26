@@ -93,23 +93,23 @@
         <div class="tab-pane fade show active text-center" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
           <div class="row my-md-2">
             <div class="col-md-6 col-sm-12">
-              Total Repos:
+              Total Repos: <%=Repos%>
             </div>
             <div class="col-md-6 col-sm-12">
-              Total Gists:
-            </div>
-          </div>
-          <div class="row my-md-2">
-            <div class="col-md-6 col-sm-12">
-              Maximum commits:
+              Total Gists: <%=Gists%>
             </div>
             <div class="col-md-6 col-sm-12">
-              Following:
+              Maximum commits: <%=Total%>
             </div>
-          </div>
-          <div class="container-fluid overview d-flex align-items-center justify-content-center">
+            <div class="col-md-6 col-sm-12">
+              Followers: <%=Followers%>
+            </div>
+            <div class="container-fluid overview d-flex align-items-center justify-content-center">
             <%include ./partials/TileGraph %>
           </div>
+          </div>
+          
+          
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           <% include ./partials/plotmonth %>

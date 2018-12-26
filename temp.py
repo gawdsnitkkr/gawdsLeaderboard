@@ -2,20 +2,20 @@ from pymongo import MongoClient
 import matplotlib.pyplot as plt
 import mpld3
 import numpy as np
-years = ["FirstYear","SecondYear","ThirdYear"]
-csv = {"FirstYear": [],"SecondYear": [],"ThirdYear": [],"FourthYear": []}
-for year in years:
-    client = MongoClient()
-    client = MongoClient('localhost', 27017)
-    db = client.test
-    posts = db.python
-    query = posts.find({"year" : year})
-    for item in query:
-        for i in item["weekly_arr"]:
-            csv[year].append(i)
+# years = ["FirstYear","SecondYear","ThirdYear"]
+# csv = {"FirstYear": [],"SecondYear": [],"ThirdYear": [],"FourthYear": []}
+# for year in years:
+#     client = MongoClient()
+#     client = MongoClient('localhost', 27017)
+#     db = client.test
+#     posts = db.python
+#     query = posts.find({"year" : year})
+#     for item in query:
+#         for i in item["weekly_arr"]:
+#             csv[year].append(i)
 
 
-print(csv)
+# print(csv)
 
 from datetime import date, datetime, timedelta
 import requests
@@ -28,29 +28,7 @@ def datespan(startDate, endDate, delta=timedelta(days=1)):
     while currentDate < endDate:
         yield currentDate
         currentDate += delta
-# total = 0
-# weekly_data = []
-# new = []
-# newnew= []
-# for day in datespan(date(2018, 1, 1), date(2018, 12, 31),delta=timedelta(days=7)):
-#     headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
-#     time.sleep(1)
-#     res = requests.get(url.format(str(day)),headers=headers)
-#     soup = BeautifulSoup(res.text,'lxml')
-#     selector = "body > div.js-yearly-contributions > div:nth-child(1) > h2"
-#     selector = selector.replace("nth-child","nth-of-type")
-#     content = soup.select(selector)
-#     contri = str(content[0])
-#     contributions = contri[contri.find(">")+2:contri.rfind("<")-1].split()[0]
-#     total+= int(contributions)
-#     weekly_data.append(total)
-#     print(len(weekly_data))
-    
-# for i in range(len(weekly_data)-1):
-#     new.append(weekly_data[i+1]-weekly_data[i])
-# for i in range(len(new)-1):
-#     newnew.append(new[i+1]-new[i])
-    
+
     
 def weekly_data(username):
     url = "https://github.com/users/placeholder/contributions?to={}".replace("placeholder",username)
@@ -74,12 +52,15 @@ def weekly_data(username):
     for i in range(len(weekly_data)-1):
         new.append(weekly_data[i+1]-weekly_data[i])
     for i in range(len(new)-1):
+        if new[i]<0:
+            new[i]=0
         newnew.append(new[i+1]-new[i])
     return newnew
     
 members = {
     "FirstYear": [
         "dikshantj",
+        "VINJIT",
         "DumbMachine",
         "kforkaran",
         "mahendra1290",
@@ -89,6 +70,7 @@ members = {
     ],
     "SecondYear": [
         "Abhi-1198",
+        "prathamzx",
         "Anshika85",
         "gabilash",
         "kaushkay",
@@ -123,8 +105,8 @@ import random
 
 def mongo_pusher(object):
     client = MongoClient()
-    client = MongoClient('localhost', 27017)
-    db = client.tests
+    client = MongoClient('mongodb://ratin:123qwe456rty@ds143594.mlab.com:43594/leaderboard')
+    db = client.leaderboard
     posts = db.users
     posts.insert_one(object)
     
@@ -167,6 +149,7 @@ def fun(members):
             user_objecty["year"] = year
             t = weekly_data(member)
             user_objecty["weekly_arr"] = weekly_data(member)
+            user_objecty["access_token"] = 69
             mongo_pusher(user_objecty)
             print(sum(t))
     

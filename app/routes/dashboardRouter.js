@@ -3,7 +3,7 @@ const key = require('../config/keys');
 const user = require('../models/userModel');
 var spawn = require("child_process").spawn;
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/tests',{ useNewUrlParser: true });
+mongoose.connect('mongodb://ratin:123qwe456rty@ds143594.mlab.com:43594/leaderboard',{ useNewUrlParser: true });
 mongoose.connection
     .once('open',()=>console.log('CONNECTED!'))
     .on('error',(err)=>{
@@ -16,15 +16,18 @@ function graphGen(username,res){
       res.redirect('/error');
     }
     else{
-      const  process = await spawn('python',["./graphGen.py", username]);
-      process.stdout.on('data', function(data) { 
+      const  process = spawn('python',["./graphGen.py", username]);
+      await process.stdout.on('data', function(data) { 
       console.log(data.toString())});
-      for(var i=0; i<500000000; ++i){};
       res.render('dashboard.ejs', {
         Name: user.login, 
         Bio: user.bio, 
         Year: user.year, 
-        Link : user.avatar_url
+        Link : user.avatar_url,
+        Repos: user.public_repos,
+        Gists: user.public_gists,
+        Total: user.contributions,
+        Followers: user.followers,
       });
       }
     })
@@ -39,7 +42,5 @@ router.get('/:username', (req, res) => {
   // console.log(data.toString()); 
     //})
   });
-
-
 
 module.exports = router;
