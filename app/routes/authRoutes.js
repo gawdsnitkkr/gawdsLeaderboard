@@ -54,14 +54,16 @@ router.all('/redirect', (req, res) => {
         }).then((body) => {
           let userLogin = body.data[0].owner.login;
           console.log(userLogin);
-          User.findOne({ "login": userLogin }).then((user) => {
-            key.keys.accessToken = accessToken;
-            res.redirect('/dashboard/:username', {
-              username: userLogin
-            });
-          }).catch((err) => {
-            console.log('Database authentication error:' + err);
-            res.redirect('/');
+          key.keys.accessToken = accessToken;
+          // User.findOne({ "login": userLogin }).then((user) => {
+          //   user.access_token = accessToken;      // Upgrade Schema with access_token
+          // }).catch((err) => {
+          //   console.log('Database authentication error:' + err);
+          //   res.redirect('/');
+          // });
+
+          res.redirect('/dashboard/:username', {
+            username: userLogin
           });
         }).catch((err) => {
           console.log(err);
