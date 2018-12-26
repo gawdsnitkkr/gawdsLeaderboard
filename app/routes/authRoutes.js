@@ -62,9 +62,7 @@ router.all('/redirect', (req, res) => {
           //   res.redirect('/');
           // });
 
-          res.redirect('/dashboard/:username', {
-            username: userLogin
-          });
+          res.redirect('http://localhost:' + key.keys.port + '/dashboard/' + userLogin);
         }).catch((err) => {
           console.log(err);
         });
