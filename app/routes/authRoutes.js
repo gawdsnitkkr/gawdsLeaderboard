@@ -62,7 +62,11 @@ router.all('/redirect', (req, res) => {
           //   res.redirect('/');
           // });
 
+<<<<<<< HEAD
           res.redirect('https://7d33cb20.ngrok.io' + '/dashboard/' + userLogin);
+=======
+          res.redirect('http://localhost:' + key.keys.port + '/dashboard/' + userLogin);
+>>>>>>> 8d85f9806a04159d64eaa83ef102c3f755e3cab6
         }).catch((err) => {
           console.log(err);
         });
