@@ -49,7 +49,7 @@ router.all('/redirect', (req, res) => {
         octokit.request('GET /user/repos', {
           headers: {
             'user-agent': key.keys.userAgent,
-            authorization: 'token' + accessToken
+            authorization: 'token ' + accessToken
           },
         }).then((body) => {
           let userLogin = body.data[0].owner.login;
