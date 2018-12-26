@@ -6,37 +6,26 @@ let firstYear=[], secondYear=[], thirdYear=[], fourthYear=[];
 const router = express.Router();
 
 User.find({"year":"FirstYear"}).then(users=> {
-  if(!users) 
-        res.redirect('/error');
-  else{
-      for(var i=0;i<users.length;i++){
-        firstYear.push(users[i])
-      }
-}});
+        firstYear.push(users);
+});
 
 User.find({"year":"SecondYear"}).then(users=> {
   if(!users) 
         res.redirect('/error');
   else{
-      for(var i=0;i<users.length;i++){
-        secondYear.push(users[i])
-      }
+        secondYear.push(users);
 }});
 User.find({"year":"ThirdYear"}).then(users=> {
   if(!users) 
         res.redirect('/error');
   else{
-      for(var i=0;i<users.length;i++){
-        thirdYear.push(users[i])
-      }
+        thirdYear.push(users);
 }});
 User.find({"year":"FourthYear"}).then(users=> {
   if(!users) 
       res.redirect('/error');
   else{
-      for(var i=0;i<users.length;i++){
-        fourthYear.push(users[i])
-      }
+        fourthYear.push(users);
 }});
 router.get('/', (req, res) => {
   res.render('members.ejs', {

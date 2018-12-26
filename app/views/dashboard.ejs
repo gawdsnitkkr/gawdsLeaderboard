@@ -30,9 +30,6 @@
           <li class="nav-item mr-3">
             <a class="nav-link" href="/members">MEMBERS</a>
           </li>
-          <li class="nav-item mr-3">
-            <a class="nav-link" href="/logout">LOG OUT</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -93,28 +90,36 @@
         <div class="tab-pane fade show active text-center" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
           <div class="row my-md-2">
             <div class="col-md-6 col-sm-12">
-              Total Repos: <%=Repos%>
+              Total Repos:
+              <%=Repos%>
             </div>
             <div class="col-md-6 col-sm-12">
-              Total Gists: <%=Gists%>
+              Total Gists:
+              <%=Gists%>
             </div>
             <div class="col-md-6 col-sm-12">
-              Maximum commits: <%=Total%>
+              Maximum commits:
+              <%=Total%>
             </div>
             <div class="col-md-6 col-sm-12">
-              Followers: <%=Followers%>
+              Followers:
+              <%=Followers%>
             </div>
             <div class="container-fluid overview d-flex align-items-center justify-content-center">
-            <%include ./partials/TileGraph %>
+              <%include ./partials/TileGraph %>
+            </div>
           </div>
-          </div>
-          
+
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <% include ./partials/plotmonth %>
+          <div class="container-fluid d-flex align-items-center justify-content-center">
+            <% include ./partials/plotmonth %>
+          </div>
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-          <% include ./partials/plotweek %>
+          <div class="container-fluid d-flex align-items-center justify-content-center">
+            <% include ./partials/plotweek %>
+          </div>
         </div>
       </div>
 

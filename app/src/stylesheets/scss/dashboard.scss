@@ -161,10 +161,16 @@ nav, .navbar-brand {
             background-color: $orgColor !important;
             @include box-shadow(0, 0px, 5px, rgba(37, 35, 35, 0.281), 0, 2px, 3px, rgba(0, 0, 0, 0.281));
             width: 100%; 
+            .container-fluid {
+              height: 100%;
+            }
+            .container-fluid.overview {
+              height: 30vh;
+            }
           }
             .row {
-              margin-left: 0 !important;
-              margin-right: 0 !important;
+              // margin-left: 0 !important;
+              // margin-right: 0 !important;
               height: 100%;
             }
         }

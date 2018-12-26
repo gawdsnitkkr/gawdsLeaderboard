@@ -172,8 +172,15 @@ nav, .navbar-brand {
   width: 100%;
 }
 
-.graphDisplay .container .tab-content .row {
+.graphDisplay .container .tab-content .tab-pane .container-fluid {
+  height: 100%;
+}
 
+.graphDisplay .container .tab-content .tab-pane .container-fluid.overview {
+  height: 30vh;
+}
+
+.graphDisplay .container .tab-content .row {
   height: 100%;
 }
 

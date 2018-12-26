@@ -2,6 +2,7 @@ const router = require('express').Router();
 const octokit = require('../util/octokit');
 const request = require('request');
 const randomString = require('randomstring');
+const User = require('../models/userModel');
 const key = require('../config/keys');
 const qs = require('querystring');
 const url = require('url');
@@ -23,6 +24,7 @@ router.get('/login', (req, res) => {
 });
 
 router.all('/redirect', (req, res) => {
+  console.log('User received')
   const code = req.query.code;
   const returnedState = req.query.state;
 
@@ -37,12 +39,37 @@ router.all('/redirect', (req, res) => {
           state: csrfString
         })
     }, (error, response, body) => {
-      key.keys.accessToken = qs.parse(body).access_token;
-      octokit.authenticate({
-        type: 'oauth',
-        token: key.keys.accessToken
-      });
-      res.redirect('/dashboard');
+      if(error) {
+        console.log(error);
+      }
+      else {
+      // key.keys.accessToken = qs.parse(body).access_token;
+      // octokit.authenticate({
+      //   type: 'oauth',
+      //   token: key.keys.accessToken
+      // });
+        const accessToken = qs.parse(body).access_token;
+
+        octokit.request('GET /user/repos', {
+          headers: {
+            'user-agent': key.keys.userAgent,
+            authorization: 'token' + accessToken
+          }
+        }).then((body) => {
+          let userLogin = body.data[0].owner.login;
+          console.log(userLogin);
+          User.findOne({ "login": userLogin }).then((user) => {
+            user.access_token = accessToken;
+            res.redirect('/dashboard/:username', {
+              username: body.data[0].owner.login
+            });
+          }).catch((err) => {
+            console.log('Database authentication error:' + err);
+            res.redirect('/');
+          });
+        })
+
+      }
     });
   } else {
     res.redirect('/');
