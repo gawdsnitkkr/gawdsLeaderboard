@@ -62,9 +62,7 @@ router.all('/redirect', (req, res) => {
           //   res.redirect('/');
           // });
 
-          res.redirect('/dashboard/:username',{
-            username: userLogin
-          });
+          res.redirect('https://7d33cb20.ngrok.io' + '/dashboard/' + userLogin);
         }).catch((err) => {
           console.log(err);
         });

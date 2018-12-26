@@ -22,8 +22,8 @@ def plt_html_line(data,username,NoHtml):
     #plt.show()
 
 def person_plot_month(username,NoHtml):    
-    client = MongoClient('mongodb://localhost:27017/')
-    db = client.tests
+    client = MongoClient('mongodb://ratin:123qwe456rty@ds143594.mlab.com:43594/leaderboard')
+    db = client.leaderboard
     posts = db.users
     query = posts.find({"login":username})
     for item in query:
@@ -57,8 +57,8 @@ def plt_html_scatter(data,data2,NoHtml):
     #plt.show()
 
 def tile_graph(username):
-    client = MongoClient('mongodb://localhost:27017/')
-    db = client.tests
+    client = MongoClient('mongodb://ratin:123qwe456rty@ds143594.mlab.com:43594/leaderboard')
+    db = client.leaderboard
     posts = db.users
     query = posts.find({"login":username})
     for item in query:
@@ -71,9 +71,8 @@ def tile_graph(username):
 
 
 def person_plot_week(username,NoHtml): 
-    client = MongoClient()
-    client = MongoClient('mongodb://localhost:27017/')
-    db = client.tests
+    client = MongoClient('mongodb://ratin:123qwe456rty@ds143594.mlab.com:43594/leaderboard')
+    db = client.leaderboard
     posts = db.users
     query = posts.find({"login":username})
     for item in query:
