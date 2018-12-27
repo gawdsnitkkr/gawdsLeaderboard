@@ -71,7 +71,6 @@ def tile_graph(username):
 
 
 def person_plot_week(username,NoHtml): 
-    client = MongoClient()
     client = MongoClient('mongodb://localhost:27017/')
     db = client.tests
     posts = db.users
